@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Reuniões</title>
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/header-nav.css">
+    <style>
+        main {
+            padding: 40px;
+        }
+
+        h1 {
+            color: #800000;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            border: 1px solid #800000;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #800000;
+            color: white;
+        }
+
+        a {
+            color: #800000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><i class="fa-solid fa-house"></i></a>
+        </div>
+        <nav>
+            <a href="listar-reunioes.html"><i class="fa-solid fa-list"></i> Reuniões</a>
+        </nav>
+        <a href="login.html" class="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i> Sair
+        </a>
+    </header>
+    <main>
+        <h1>Lista de Reuniões</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Link para Avaliação</th>
+                    <th>Média das Avaliações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Reunião de Projeto</td>
+                    <td><a href="avaliacao.html?reuniao=001">Avaliar</a></td>
+                    <td>4.5</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Revisão Mensal</td>
+                    <td><a href="avaliacao.html?reuniao=002">Avaliar</a></td>
+                    <td>4.2</td>
+                </tr>
+                <!-- Adicione mais linhas conforme necessário -->
+            </tbody>
+        </table>
+    </main>
+    <script src="https://kit.fontawesome.com/d7ca27443c.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+/* css/header-nav.css */
+/* Header */
+header {
+    background-color: #800000;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.logo a:hover {
+    background-color: #660000;
+}
+
+.logo i {
+    margin-right: 8px;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a,
+.logout-btn {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover,
+.logout-btn:hover {
+    background-color: #660000;
+    text-decoration: none;
+}
+
+/* Botão de logout */
+.logout-btn {
+    background-color: #a94442;
+}
