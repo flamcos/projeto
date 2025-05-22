@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avaliar Reunião</title>
+  <link rel="stylesheet" href="css/default.css">
+  <link rel="stylesheet" href="css/header-nav.css">
+  <link rel="stylesheet" href="css/avaliar-reuniao.css">
+  <style>
+    .avaliacao-container {
+      max-width: 400px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(128, 0, 0, 0.08);
+      padding: 32px;
+    }
+    h1 {
+      color: #800000;
+      margin-bottom: 20px;
+    }
+    .nome-reuniao {
+      font-weight: bold;
+      color: #660000;
+      margin-bottom: 24px;
+      font-size: 1.1em;
+    }
+    .star-rating {
+      direction: rtl;
+      display: flex;
+      justify-content: flex-start;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .star-rating input[type="radio"] {
+      display: none;
+    }
+    .star-rating label {
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .star-rating input[type="radio"]:checked ~ label,
+    .star-rating label:hover,
+    .star-rating label:hover ~ label {
+      color: #FFD700;
+    }
+    textarea {
+      width: 100%;
+      min-height: 80px;
+      border: 1px solid #d9b3b3;
+      border-radius: 6px;
+      padding: 10px;
+      margin-bottom: 20px;
+      background-color: #fff6f6;
+      resize: vertical;
+    }
+    button {
+      width: 100%;
+      background-color: #800000;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #660000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html"><i class="fa-solid fa-house"></i></a>
+    </div>
+    <nav>
+      <a href="listar-reunioes.html"><i class="fa-solid fa-list"></i> Reuniões</a>
+    </nav>
+    <a href="login.html" class="logout-btn">
+      <i class="fa-solid fa-right-from-bracket"></i> Sair
+    </a>
+  </header>
+  <main>
+    <div class="avaliacao-container">
+      <h1>Avaliar Reunião</h1>
+      <div class="nome-reuniao">Reunião de Planejamento</div>
+      <form action="finalizada-avaliacao.html" method="POST">
+        <div class="star-rating">
+          <input type="radio" id="star5" name="nota" value="5" required><label for="star5">&#9733;</label>
+          <input type="radio" id="star4" name="nota" value="4"><label for="star4">&#9733;</label>
+          <input type="radio" id="star3" name="nota" value="3"><label for="star3">&#9733;</label>
+          <input type="radio" id="star2" name="nota" value="2"><label for="star2">&#9733;</label>
+          <input type="radio" id="star1" name="nota" value="1"><label for="star1">&#9733;</label>
+        </div>
+        <label for="observacao">Observação:</label>
+        <textarea id="observacao" name="observacao" placeholder="Digite sua observação..."></textarea>
+        <button type="submit"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
+      </form>
+    </div>
+  </main>
+  <script src="https://kit.fontawesome.com/d7ca27443c.js" crossorigin="anonymous"></script>
+  <script>
+    document.getElementById('avaliacaoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      window.location.href = 'finalizada-avaliacao.html';
+    });
+  </script>
+</body>
+</html>
