@@ -8,175 +8,6 @@
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/header-nav.css">
     <link rel="stylesheet" href="css/detalhes-reuniao.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #f5f6fa;
-        }
-
-        header {
-            width: 100vw;
-            margin: 0;
-            left: 0;
-            right: 0;
-            box-sizing: border-box;
-            background: #800000;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 32px;
-            min-height: 60px;
-            position: relative;
-        }
-
-        .logo a {
-            color: #fff;
-            font-size: 1.6em;
-            text-decoration: none;
-        }
-
-        .logout-btn {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        main {
-            display: flex;
-            gap: 32px;
-            margin-top: 0;
-            align-items: flex-start;
-        }
-
-        .left,
-        .right {
-            background: #fff;
-            border-radius: 8px;
-            padding: 24px;
-            box-shadow: 0 2px 8px #0001;
-        }
-
-        .left {
-            flex: 1;
-            min-width: 320px;
-        }
-
-        .right {
-            flex: 2;
-            min-width: 400px;
-        }
-
-        .participantes-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 12px 0 20px 0;
-        }
-
-        .participante-chip {
-            background: #e3e7fa;
-            color: #2a3a5a;
-            border-radius: 16px;
-            padding: 6px 14px;
-            font-size: 0.98em;
-            display: flex;
-            align-items: center;
-        }
-
-        .edit-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            margin-left: 8px;
-            color: #2a3a5a;
-            font-size: 1.1em;
-        }
-
-        .media {
-            text-align: right;
-            font-weight: bold;
-            margin-top: 12px;
-        }
-
-        /* Modal styles */
-        .modal-bg {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            background: #0006;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-bg.active {
-            display: flex;
-        }
-
-        .modal {
-            background: #fff;
-            border-radius: 8px;
-            padding: 32px 24px;
-            min-width: 320px;
-            box-shadow: 0 2px 16px #0003;
-        }
-
-        .modal label {
-            display: block;
-            margin-top: 12px;
-        }
-
-        .modal input,
-        .modal textarea {
-            width: 100%;
-            margin-top: 4px;
-            padding: 6px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-
-        <style>
-
-        /* ...demais estilos... */
-        .modal .modal-actions {
-            margin-top: 18px;
-            display: flex;
-            justify-content: flex-end;
-            gap: 8px;
-        }
-
-        .modal .modal-actions button {
-            flex: 1;
-            min-width: 110px;
-            padding: 8px 0;
-            border-radius: 4px;
-            border: none;
-            font-size: 1em;
-            box-sizing: border-box;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .modal .modal-actions button[type="button"] {
-            background: #eee;
-            color: #333;
-        }
-
-        .modal .modal-actions button[type="submit"] {
-            background: #800000;
-            color: #fff;
-        }
-    </style>
-    </style>
 </head>
 
 <body>
@@ -210,7 +41,12 @@
                     <span class="participante-chip">carol@email.com</span>
                 </div>
             </div>
-            <a href="email-link.html" class="btn">Enviar e-mail</a>
+            <div class="envio-email">
+                <a href="email-link.html" class="btn-enviar-email">
+                    <i class="fa-solid fa-paper-plane"></i> Enviar e-mail
+                </a>
+
+            </div>
         </section>
         <!-- Direita: Avaliações -->
         <section class="right avaliacoes">
@@ -264,7 +100,7 @@
                 </label>
                 <div class="modal-actions">
                     <button type="button" onclick="closeModal()">Cancelar</button>
-                    <button type="submit" class="btn">Salvar</button>
+                    <button type="submit"><i class="fa-solid fa-save"></i> Salvar</button>
                 </div>
             </form>
         </div>
