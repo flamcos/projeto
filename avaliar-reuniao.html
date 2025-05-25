@@ -15,6 +15,7 @@
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(128, 0, 0, 0.08);
       padding: 32px;
+      border: 1px solid #800000; /* Borda fina bordô */
     }
     h1 {
       color: #800000;
@@ -73,22 +74,16 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <a href="index.html"><i class="fa-solid fa-house"></i></a>
-    </div>
-    <nav>
-      <a href="listar-reunioes.html"><i class="fa-solid fa-list"></i> Reuniões</a>
-    </nav>
-    <a href="login.html" class="logout-btn">
-      <i class="fa-solid fa-right-from-bracket"></i> Sair
-    </a>
-  </header>
   <main>
     <div class="avaliacao-container">
       <h1>Avaliar Reunião</h1>
-      <div class="nome-reuniao">Reunião de Planejamento</div>
-      <form action="finalizada-avaliacao.html" method="POST">
+      <div class="nome-reuniao">
+        Reunião de Planejamento
+        <div style="font-weight: normal; color: #4a0f0f; font-size: 0.98em; margin-top: 4px;">
+          Data: 10/06/2024 &nbsp; | &nbsp; Hora: 14:00
+        </div>
+      </div>
+      <form action="finalizada-avaliacao.html" method="GET">
         <div class="star-rating">
           <input type="radio" id="star5" name="nota" value="5" required><label for="star5">&#9733;</label>
           <input type="radio" id="star4" name="nota" value="4"><label for="star4">&#9733;</label>
@@ -103,11 +98,5 @@
     </div>
   </main>
   <script src="https://kit.fontawesome.com/d7ca27443c.js" crossorigin="anonymous"></script>
-  <script>
-    document.getElementById('avaliacaoForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      window.location.href = 'finalizada-avaliacao.html';
-    });
-  </script>
 </body>
 </html>

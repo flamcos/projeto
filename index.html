@@ -1,40 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro e Lista de Reuniões</title>
+    <title>Painel Principal - Sistema de Reuniões</title>
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/header-nav.css">
     <link rel="stylesheet" href="css/index.css">
+    <style>
+        .dashboard {
+            display: flex;
+            gap: 32px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+        .dashboard-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(128,0,0,0.08);
+            padding: 32px 24px;
+            text-align: center;
+            width: 280px;
+            transition: box-shadow 0.2s;
+        }
+        .dashboard-card:hover {
+            box-shadow: 0 8px 24px rgba(128,0,0,0.15);
+        }
+        .dashboard-card i {
+            font-size: 2.5em;
+            color: #800000;
+            margin-bottom: 12px;
+        }
+        .dashboard-card a {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 10px 24px;
+            background: #800000;
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .dashboard-card a:hover {
+            background: #660000;
+        }
+    </style>
 </head>
-
 <body>
     <header>
         <div class="logo">
             <a href="index.html"><i class="fa-solid fa-house"></i></a>
         </div>
-        <nav>
-            <a href="listar-reunioes.html"><i class="fa-solid fa-list"></i> Reuniões</a>
-        </nav>
         <a href="login.html" class="logout-btn">
             <i class="fa-solid fa-right-from-bracket"></i> Sair
         </a>
     </header>
     <main>
-
-        <h1>Cadastro de Reuniões</h1>
-        <a href="cadastrar-reunioes.html">
-            <i class="fa-solid fa-calendar-plus"></i> Agendar Reunião
-        </a>
-
-        <h1>Lista de Reuniões</h1>
-        <a href="listar-reunioes.html">
-            <i class="fa-solid fa-list-ul"></i> Listar Reuniões
-        </a>
+        <h1></h1>
+        <div class="dashboard">
+            <div class="dashboard-card">
+                <i class="fa-solid fa-calendar-plus"></i>
+                <h2>Agendar Reunião</h2>
+                <p>Cadastre uma nova reunião e convide os participantes.    </p>
+                <a href="cadastrar-reunioes.html">Agendar</a>
+            </div>
+            <div class="dashboard-card">
+                <i class="fa-solid fa-list-ul"></i>
+                <h2>Listar Reuniões</h2>
+                <p>Veja as reuniões agendadas, detalhes e avaliações.</p>
+                <a href="listar-reunioes.html">Visualizar</a>
+            </div>
+        </div>
     </main>
     <script src="https://kit.fontawesome.com/d7ca27443c.js" crossorigin="anonymous"></script>
 </body>
-
 </html>

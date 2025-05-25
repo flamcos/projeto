@@ -65,3 +65,21 @@ button:hover {
 button i {
     margin-right: 6px;
 }
+#participantes-emails {
+    width: 100%;
+    padding: 10px;
+    border: 1.5px solid #030000;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    background-color: #fff6f6;
+    color: #4a0f0f;
+    font-size: 1em;
+    resize: vertical;
+    transition: border-color 0.2s;
+}
+
+#participantes-emails:focus {
+    border-color: #a94442;
+    outline: none;
+    background-color: #fff0f0;
+}

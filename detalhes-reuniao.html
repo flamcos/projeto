@@ -8,6 +8,175 @@
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/header-nav.css">
     <link rel="stylesheet" href="css/detalhes-reuniao.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f5f6fa;
+        }
+
+        header {
+            width: 100vw;
+            margin: 0;
+            left: 0;
+            right: 0;
+            box-sizing: border-box;
+            background: #800000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            min-height: 60px;
+            position: relative;
+        }
+
+        .logo a {
+            color: #fff;
+            font-size: 1.6em;
+            text-decoration: none;
+        }
+
+        .logout-btn {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        main {
+            display: flex;
+            gap: 32px;
+            margin-top: 0;
+            align-items: flex-start;
+        }
+
+        .left,
+        .right {
+            background: #fff;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 2px 8px #0001;
+        }
+
+        .left {
+            flex: 1;
+            min-width: 320px;
+        }
+
+        .right {
+            flex: 2;
+            min-width: 400px;
+        }
+
+        .participantes-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 12px 0 20px 0;
+        }
+
+        .participante-chip {
+            background: #e3e7fa;
+            color: #2a3a5a;
+            border-radius: 16px;
+            padding: 6px 14px;
+            font-size: 0.98em;
+            display: flex;
+            align-items: center;
+        }
+
+        .edit-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-left: 8px;
+            color: #2a3a5a;
+            font-size: 1.1em;
+        }
+
+        .media {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        /* Modal styles */
+        .modal-bg {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: #0006;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-bg.active {
+            display: flex;
+        }
+
+        .modal {
+            background: #fff;
+            border-radius: 8px;
+            padding: 32px 24px;
+            min-width: 320px;
+            box-shadow: 0 2px 16px #0003;
+        }
+
+        .modal label {
+            display: block;
+            margin-top: 12px;
+        }
+
+        .modal input,
+        .modal textarea {
+            width: 100%;
+            margin-top: 4px;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        <style>
+
+        /* ...demais estilos... */
+        .modal .modal-actions {
+            margin-top: 18px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+
+        .modal .modal-actions button {
+            flex: 1;
+            min-width: 110px;
+            padding: 8px 0;
+            border-radius: 4px;
+            border: none;
+            font-size: 1em;
+            box-sizing: border-box;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .modal .modal-actions button[type="button"] {
+            background: #eee;
+            color: #333;
+        }
+
+        .modal .modal-actions button[type="submit"] {
+            background: #800000;
+            color: #fff;
+        }
+    </style>
+    </style>
 </head>
 
 <body>
@@ -15,34 +184,36 @@
         <div class="logo">
             <a href="index.html"><i class="fa-solid fa-house"></i></a>
         </div>
-        <nav>
-            <a href="listar-reunioes.html"><i class="fa-solid fa-list"></i> Reuniões</a>
-        </nav>
         <a href="login.html" class="logout-btn">
             <i class="fa-solid fa-right-from-bracket"></i> Sair
         </a>
     </header>
     <main>
-        <h1>Detalhe da Reunião</h1>
-
-        <section class="info">
-            <p><strong>Nome:</strong> Reunião de Planejamento</p>
-            <p><strong>Data:</strong> 10/06/2024</p>
-            <p><strong>Hora:</strong> 14:00</p>
+        <!-- Esquerda: Detalhes da reunião -->
+        <section class="left">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <h1 style="margin: 0;">Detalhes da Reunião</h1>
+                <button class="edit-btn" title="Editar detalhes" onclick="openModal()">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+            </div>
+            <div class="info">
+                <p><strong>Nome:</strong> <span id="nomeReuniao">Reunião de Planejamento</span></p>
+                <p><strong>Data:</strong> <span id="dataReuniao">10/06/2024</span></p>
+                <p><strong>Hora:</strong> <span id="horaReuniao">14:00</span></p>
+            </div>
+            <div>
+                <strong>Participantes:</strong>
+                <div class="participantes-list" id="participantesList">
+                    <span class="participante-chip">alice@email.com</span>
+                    <span class="participante-chip">bob@email.com</span>
+                    <span class="participante-chip">carol@email.com</span>
+                </div>
+            </div>
+            <a href="email-link.html" class="btn">Enviar e-mail</a>
         </section>
-
-        <section class="emails">
-            <strong>Participantes:</strong>
-            <ul>
-                <li>alice@email.com</li>
-                <li>bob@email.com</li>
-                <li>carol@email.com</li>
-            </ul>
-        </section>
-
-        <a href="email-link.html" class="btn">Enviar e-mail</a>
-
-        <section class="avaliacoes">
+        <!-- Direita: Avaliações -->
+        <section class="right avaliacoes">
             <h2>Avaliações</h2>
             <table>
                 <thead>
@@ -73,8 +244,64 @@
             <p class="media">Média das avaliações: 8.0</p>
         </section>
     </main>
-
+    <!-- Modal de edição -->
+    <div class="modal-bg" id="modalEdit">
+        <div class="modal">
+            <h2>Editar Detalhes da Reunião</h2>
+            <form id="editForm" onsubmit="saveEdit(event)">
+                <label>Nome:
+                    <input type="text" id="editNome" value="Reunião de Planejamento" required>
+                </label>
+                <label>Data:
+                    <input type="date" id="editData" value="2024-06-10" required>
+                </label>
+                <label>Hora:
+                    <input type="time" id="editHora" value="14:00" required>
+                </label>
+                <label>Participantes (separe por vírgula):
+                    <input type="text" id="editParticipantes" value="alice@email.com, bob@email.com, carol@email.com"
+                        required>
+                </label>
+                <div class="modal-actions">
+                    <button type="button" onclick="closeModal()">Cancelar</button>
+                    <button type="submit" class="btn">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
     <script src="https://kit.fontawesome.com/d7ca27443c.js" crossorigin="anonymous"></script>
+    <script>
+        function openModal() {
+            // Preenche o campo de participantes com os valores atuais
+            const chips = document.querySelectorAll('#participantesList .participante-chip');
+            const participantes = Array.from(chips).map(chip => chip.textContent).join(', ');
+            document.getElementById('editParticipantes').value = participantes;
+            document.getElementById('modalEdit').classList.add('active');
+        }
+        function closeModal() {
+            document.getElementById('modalEdit').classList.remove('active');
+        }
+        function saveEdit(event) {
+            event.preventDefault();
+            document.getElementById('nomeReuniao').textContent = document.getElementById('editNome').value;
+            document.getElementById('dataReuniao').textContent = new Date(document.getElementById('editData').value).toLocaleDateString('pt-BR');
+            document.getElementById('horaReuniao').textContent = document.getElementById('editHora').value;
+
+            // Atualiza os participantes
+            const participantesStr = document.getElementById('editParticipantes').value;
+            const participantesArr = participantesStr.split(',').map(p => p.trim()).filter(p => p.length > 0);
+            const participantesList = document.getElementById('participantesList');
+            participantesList.innerHTML = '';
+            participantesArr.forEach(email => {
+                const span = document.createElement('span');
+                span.className = 'participante-chip';
+                span.textContent = email;
+                participantesList.appendChild(span);
+            });
+
+            closeModal();
+        }
+    </script>
 </body>
 
 </html>

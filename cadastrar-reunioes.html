@@ -1,50 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Reunião</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" href="css/header-nav.css">
-    <link rel="stylesheet" href="css/cadastrar-reunioes.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Reunião</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/default.css">
+  <link rel="stylesheet" href="css/header-nav.css">
+  <link rel="stylesheet" href="css/cadastrar-reunioes.css">
 </head>
-
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html"><i class="fa-solid fa-house"></i></a>
-        </div>
-        <nav>
-            <a href="listar-reunioes.html"><i class="fa-solid fa-list"></i> Reuniões</a>
-        </nav>
-        <a href="login.html" class="logout-btn">
-            <i class="fa-solid fa-right-from-bracket"></i> Sair
-        </a>
-    </header>
-    <main>
-        <h1>Cadastro de Reunião</h1>
-        <img class="reuniao-img" src="https://cdn-icons-png.flaticon.com/512/747/747310.png" alt="Ícone de reunião">
-        <form action="reuniao-detalhe.html" method="GET">
-            <label for="nome-reuniao">Nome da Reunião:</label>
-            <input type="text" id="nome-reuniao" name="nome" placeholder="Ex: Reunião de planejamento" required>
-
-            <label for="data-reuniao">Data:</label>
-            <input type="date" id="data-reuniao" name="data" required>
-
-            <label for="hora-reuniao">Hora:</label>
-            <input type="time" id="hora-reuniao" name="hora" required>
-
-            <label for="participantes-emails">Participantes e-mails:</label>
-            <textarea id="participantes-emails" name="participantes" placeholder="Digite um e-mail por linha" rows="4"
-                required style="width: 100%;"></textarea>
-            <button type="submit">
-                <i class="fa-solid fa-calendar-check"></i> Agendar Reunião
-            </button>
-        </form>
-    </main>
-    <script src="https://kit.fontawesome.com/d7ca27443c.js" crossorigin="anonymous"></script>
+  <header>
+    <div class="logo">
+      <a href="index.html"><i class="fa-solid fa-house"></i></a>
+    </div>
+  </header>
+  <main>
+    <h1>Cadastro de Reunião</h1>
+    <i class="fa-solid fa-users reuniao-img" style="font-size:60px; color:#800000; margin-bottom:16px;" aria-label="Ícone de reunião"></i>
+    <form action="detalhes-reuniao.html" method="GET">
+      <label for="nome-reuniao">Nome da Reunião:</label>
+      <input type="text" id="nome-reuniao" name="nome" placeholder="Ex: Reunião de planejamento" required>
+      <label for="data-reuniao">Data:</label>
+      <input type="date" id="data-reuniao" name="data" required>
+      <label for="hora-reuniao">Hora:</label>
+      <input type="time" id="hora-reuniao" name="hora" required>
+      <label for="participantes-emails">Participantes e-mails:</label>
+      <textarea id="participantes-emails" name="participantes" placeholder="Digite um e-mail por linha" rows="4" required></textarea>
+      <button type="submit">
+        <i class="fa-solid fa-calendar-check"></i> Agendar Reunião
+      </button>
+    </form>
+  </main>
+  <script src="https://kit.fontawesome.com/d7ca27443c.js" crossorigin="anonymous"></script>
 </body>
-
 </html>

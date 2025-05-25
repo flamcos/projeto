@@ -15,9 +15,6 @@
         <div class="logo">
             <a href="index.html"><i class="fa-solid fa-house"></i></a>
         </div>
-        <nav>
-            <a href="listar-reunioes.html"><i class="fa-solid fa-list"></i> Reuniões</a>
-        </nav>
         <a href="login.html" class="logout-btn">
             <i class="fa-solid fa-right-from-bracket"></i> Sair
         </a>
@@ -29,22 +26,36 @@
                 <tr>
                     <th>Código</th>
                     <th>Nome</th>
-                    <th>Link para Avaliação</th>
+                    <th>Data</th>
+                    <th>Hora</th>
                     <th>Média das Avaliações</th>
+                    <th>Detalhar</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>001</td>
                     <td>Reunião de Projeto</td>
-                    <td><a href="avaliar-reuniao.html?reunião=001">Avaliar</a></td>
+                    <td>10/06/2024</td>
+                    <td>14:00</td>
                     <td>4.5</td>
+                    <td>
+                        <a href="detalhes-reuniao.html?reuniao=001" title="Detalhar Reunião" class="detalhar-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <td>002</td>
                     <td>Revisão Mensal</td>
-                    <td><a href="avaliar-reuniao.html?reuniao=002">Avaliar</a></td>
+                    <td>15/06/2024</td>
+                    <td>09:30</td>
                     <td>4.2</td>
+                    <td>
+                        <a href="detalhes-reuniao.html?reuniao=002" title="Detalhar Reunião" class="detalhar-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                    </td>
                 </tr>
                 <!-- Adicione mais linhas conforme necessário -->
             </tbody>
