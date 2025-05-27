@@ -1,0 +1,73 @@
+.avaliacao-container {
+    max-width: 400px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(128, 0, 0, 0.08);
+    padding: 32px;
+    border: 1px solid #800000;
+    /* Borda fina bordô */
+}
+
+h1 {
+    color: #800000;
+    margin-bottom: 20px;
+}
+
+.nome-reuniao {
+    font-weight: bold;
+    color: #660000;
+    margin-bottom: 24px;
+    font-size: 1.1em;
+}
+
+.star-rating {
+    direction: rtl;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.star-rating input[type="radio"]:checked~label,
+.star-rating label:hover,
+.star-rating label:hover~label {
+    color: #FFD700;
+}
+
+textarea {
+    width: 100%;
+    min-height: 80px;
+    border: 1px solid #d9b3b3;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #fff6f6;
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    background-color: #800000;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #660000;
+}
