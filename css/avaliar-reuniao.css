@@ -71,3 +71,10 @@ button {
 button:hover {
     background-color: #660000;
 }
+
+.info-reuniao {
+    font-weight: normal;
+    color: #4a0f0f;
+    font-size: 0.98em;
+    margin-top: 4px;
+}

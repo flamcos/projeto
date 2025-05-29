@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,15 @@
   <link rel="stylesheet" href="css/header-nav.css">
   <link rel="stylesheet" href="css/avaliar-reuniao.css">
 </head>
+
 <body>
   <main>
     <div class="avaliacao-container">
       <h1>Avaliar Reunião</h1>
       <div class="nome-reuniao">
-        Reunião de Planejamento
-        <div style="font-weight: normal; color: #4a0f0f; font-size: 0.98em; margin-top: 4px;">
-          Data: 10/06/2024 &nbsp; | &nbsp; Hora: 14:00
+        <span id="nomeReuniao">Reunião de Planejamento</span>
+        <div class="info-reuniao">
+          Data: <span id="dataReuniao">10/06/2024</span> &nbsp; | &nbsp; Hora: <span id="horaReuniao">14:00</span>
         </div>
       </div>
       <form action="finalizada-avaliacao.html" method="GET">
@@ -33,5 +35,7 @@
     </div>
   </main>
   <script src="https://kit.fontawesome.com/d7ca27443c.js" crossorigin="anonymous"></script>
+<script src="js/avaliar-reuniao.js"></script>
 </body>
+
 </html>
