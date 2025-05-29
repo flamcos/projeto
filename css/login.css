@@ -79,3 +79,8 @@ button:hover {
 .links a:hover {
     color: #a94442;
 }
+
+.login-error {
+    color: #b00;
+    margin-top: 10px;
+}

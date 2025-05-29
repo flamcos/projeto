@@ -11,7 +11,7 @@
 <body>
     <div class="login-container">
         <h3>Faça seu login</h3>
-        <form action="index.html" method="get">
+        <form id="loginForm">
             <label for="email">E-mail:</label>
             <input type="email" id="email" name="email" required>
 
@@ -20,8 +20,9 @@
 
             <button type="submit">Entrar</button>
         </form>
-        </div>
+        <div id="loginError" class="login-error"></div>
     </div>
+    <script src="js/login.js"></script>
 </body>
 
 </html>
