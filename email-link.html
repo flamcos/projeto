@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Convite para Avaliação de Reunião</title>
-    <link rel="stylesheet" href="css/email-link.css">
+  <link rel="stylesheet" href="css/email-link.css">
 </head>
+
 <body>
   <div class="email-container">
     <h2>Você participou de uma reunião!</h2>
     <p></p>
     <p>Gostaríamos de saber como foi sua experiência na reunião abaixo:</p>
     <div class="info">
-      <p><strong>Nome:</strong> Reunião de Planejamento</p>
-      <p><strong>Data:</strong> 10/06/2024</p>
-      <p><strong>Hora:</strong> 14:00</p>
+      <p><strong>Nome:</strong> <span id="nomeReuniao">...</span></p>
+      <p><strong>Data:</strong> <span id="dataReuniao">...</span></p>
+      <p><strong>Hora:</strong> <span id="horaReuniao">...</span></p>
     </div>
-    <a href="avaliar-reuniao.html" class="btn">Avaliar Reunião</a>
+    <a href="avaliar-reuniao.html?idReuniao=2" class="btn">Avaliar Reunião</a>
     <div class="footer">
       Obrigado por sua colaboração!<br>
       Equipe de Reuniões
     </div>
   </div>
+  <script src="js/email-link.js"></script>
 </body>
+
 </html>
