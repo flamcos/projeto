@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
       reunioes.forEach(reuniao => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-          <td>${reuniao.codigo}</td>
+          <td>${reuniao.id}</td>
           <td>${reuniao.nome}</td>
           <td>${reuniao.data}</td>
           <td>${reuniao.hora}</td>
           <td>${reuniao.mediaAvaliacao ?? '-'}</td>
           <td>
-            <a href="detalhes-reuniao.html?reuniao=${encodeURIComponent(reuniao.codigo)}" title="Detalhar Reunião" class="detalhar-btn">
+            <a href="detalhes-reuniao.html?reuniao=${encodeURIComponent(reuniao.id)}" title="Detalhar Reunião" class="detalhar-btn">
               <i class="fa-solid fa-magnifying-glass"></i>
             </a>
           </td>

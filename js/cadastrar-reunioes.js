@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Substitua pela URL real do seu backend
-    const url = 'https://run.mocky.io/v3/a6c799c8-1ee5-4941-b3b8-c12fc4d69b13';
+    const url = 'https://run.mocky.io/v3/97de1ba3-76ff-4870-a851-5367919304c5';
 
     fetch(url, {
       method: 'POST',
