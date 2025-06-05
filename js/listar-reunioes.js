@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <td>${reuniao.mediaAvaliacao ?? '-'}</td>
           <td>
             <a href="detalhes-reuniao.html?reuniao=${encodeURIComponent(reuniao.id)}" title="Detalhar Reunião" class="detalhar-btn">
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-eye"></i>
             </a>
           </td>
         `;
