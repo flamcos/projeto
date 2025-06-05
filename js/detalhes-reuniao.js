@@ -99,24 +99,59 @@ function closeModal() {
 // Ao salvar, separe os participantes usando ";"
 function saveEdit(event) {
     event.preventDefault();
-    document.getElementById('nomeReuniao').textContent = document.getElementById('editNome').value;
-    document.getElementById('dataReuniao').textContent = new Date(document.getElementById('editData').value).toLocaleDateString('pt-BR');
-    document.getElementById('horaReuniao').textContent = document.getElementById('editHora').value;
+    const idReuniao = getQueryParam('reuniao');
+    if (!idReuniao) return;
 
-    // Atualiza os participantes usando ";"
+    // Coleta os dados do formulário/modal
+    const nome = document.getElementById('editNome').value;
+    const data = document.getElementById('editData').value; // yyyy-mm-dd
+    const hora = document.getElementById('editHora').value; // HH:MM
     const participantesStr = document.getElementById('editParticipantes').value;
     const participantesArr = participantesStr.split(';').map(p => p.trim()).filter(p => p.length > 0);
-    const participantesList = document.getElementById('participantesList');
-    participantesList.innerHTML = '';
-    participantesArr.forEach(email => {
-        const span = document.createElement('span');
-        span.className = 'participante-chip';
-        span.textContent = email;
-        participantesList.appendChild(span);
-    });
-    closeModal();
-}
 
+    // Monta o payload conforme esperado pela API
+    const payload = {
+        nome: nome,
+        data_hora: `${data} ${hora}:00`,
+        participantes: participantesArr
+    };
+
+    fetch(`https://84cf54eb-939c-4f39-83c4-1599b1d6daa6.mock.pstmn.io/api/v1/reunioes/${idReuniao}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    })
+        .then(response => {
+            if (!response.ok) throw new Error('Erro ao salvar edição');
+            // Não usa o response, apenas fecha o modal e atualiza a tela
+            // return response.json();
+        })
+        .then(() => {
+            // Atualiza os detalhes da reunião na tela com os dados dos campos
+            document.getElementById('nomeReuniao').textContent = nome;
+
+            // Formata a data para dd/mm/yyyy
+            const [ano, mes, dia] = data.split('-');
+            document.getElementById('dataReuniao').textContent = `${dia}/${mes}/${ano}`;
+            document.getElementById('horaReuniao').textContent = hora;
+
+            // Atualiza os participantes
+            const participantesList = document.getElementById('participantesList');
+            participantesList.innerHTML = '';
+            participantesArr.forEach(email => {
+                const span = document.createElement('span');
+                span.className = 'participante-chip';
+                span.textContent = email;
+                participantesList.appendChild(span);
+            });
+
+            closeModal();
+        })
+        .catch(err => {
+            alert('Erro ao salvar edição da reunião.');
+            console.error(err);
+        });
+}
 function carregarAvaliacoes(idReuniao) {
     fetch(`https://c394c115-a986-4a2a-a911-479f938acf01.mock.pstmn.io/api/v1/reunioes/${idReuniao}/avaliacoes`)
         .then(response => {
