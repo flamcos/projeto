@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Substitua pela URL real do seu backend
-    const url = 'https://run.mocky.io/v3/97de1ba3-76ff-4870-a851-5367919304c5';
+    const url = 'https://46e5d069-029a-480f-b7aa-bffbe9e7bdbc.mock.pstmn.io/api/v1/reunioes';
 
     fetch(url, {
       method: 'POST',

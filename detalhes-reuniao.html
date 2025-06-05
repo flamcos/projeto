@@ -57,21 +57,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Alice</td>
-                        <td>8</td>
-                        <td>Boa reunião</td>
-                    </tr>
-                    <tr>
-                        <td>Bob</td>
-                        <td>9</td>
-                        <td>Ótima discussão</td>
-                    </tr>
-                    <tr>
-                        <td>Carol</td>
-                        <td>7</td>
-                        <td>Poderia ser mais objetiva</td>
-                    </tr>
+            
                 </tbody>
             </table>
             <p class="media">Média das avaliações: 8.0</p>
@@ -83,17 +69,16 @@
             <h2>Editar Detalhes da Reunião</h2>
             <form id="editForm" onsubmit="saveEdit(event)">
                 <label>Nome:
-                    <input type="text" id="editNome" value="Reunião de Planejamento" required>
+                    <input type="text" id="editNome" required>
                 </label>
                 <label>Data:
-                    <input type="date" id="editData" value="2024-06-10" required>
+                    <input type="date" id="editData" required>
                 </label>
                 <label>Hora:
-                    <input type="time" id="editHora" value="14:00" required>
+                    <input type="time" id="editHora" required>
                 </label>
-                <label>Participantes (separe por vírgula):
-                    <input type="text" id="editParticipantes" value="alice@email.com, bob@email.com, carol@email.com"
-                        required>
+                <label>Participantes (separe por ponto e vírgula):
+                    <input type="text" id="editParticipantes" required>
                 </label>
                 <div class="modal-actions">
                     <button type="button" onclick="closeModal()">Cancelar</button>
@@ -103,38 +88,6 @@
         </div>
     </div>
     <script src="https://kit.fontawesome.com/d7ca27443c.js" crossorigin="anonymous"></script>
-    <script>
-        function openModal() {
-            // Preenche o campo de participantes com os valores atuais
-            const chips = document.querySelectorAll('#participantesList .participante-chip');
-            const participantes = Array.from(chips).map(chip => chip.textContent).join(', ');
-            document.getElementById('editParticipantes').value = participantes;
-            document.getElementById('modalEdit').classList.add('active');
-        }
-        function closeModal() {
-            document.getElementById('modalEdit').classList.remove('active');
-        }
-        function saveEdit(event) {
-            event.preventDefault();
-            document.getElementById('nomeReuniao').textContent = document.getElementById('editNome').value;
-            document.getElementById('dataReuniao').textContent = new Date(document.getElementById('editData').value).toLocaleDateString('pt-BR');
-            document.getElementById('horaReuniao').textContent = document.getElementById('editHora').value;
-
-            // Atualiza os participantes
-            const participantesStr = document.getElementById('editParticipantes').value;
-            const participantesArr = participantesStr.split(',').map(p => p.trim()).filter(p => p.length > 0);
-            const participantesList = document.getElementById('participantesList');
-            participantesList.innerHTML = '';
-            participantesArr.forEach(email => {
-                const span = document.createElement('span');
-                span.className = 'participante-chip';
-                span.textContent = email;
-                participantesList.appendChild(span);
-            });
-
-            closeModal();
-        }
-    </script>
     <script src="js/detalhes-reuniao.js"></script>
 </body>
 

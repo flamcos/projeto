@@ -14,13 +14,19 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       tbody.innerHTML = '';
       reunioes.forEach(reuniao => {
+        const dataFormatada = reuniao.data
+          ? new Date(reuniao.data).toLocaleDateString('pt-BR')
+          : '-';
         const tr = document.createElement('tr');
         tr.innerHTML = `
           <td>${reuniao.id}</td>
           <td>${reuniao.nome}</td>
-          <td>${reuniao.data}</td>
+          <td>${dataFormatada}</td>
           <td>${reuniao.hora}</td>
-          <td>${reuniao.mediaAvaliacao ?? '-'}</td>
+          <td>${reuniao.mediaAvaliacao != null
+            ? Number(reuniao.mediaAvaliacao).toFixed(2).replace('.', ',')
+            : '-'
+          }</td>
           <td>
             <a href="detalhes-reuniao.html?reuniao=${encodeURIComponent(reuniao.id)}" title="Detalhar Reunião" class="detalhar-btn">
               <i class="fa-solid fa-eye"></i>
